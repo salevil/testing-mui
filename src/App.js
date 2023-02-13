@@ -36,10 +36,6 @@ return (
             multiline
             rows={5}
           />)}
-        <Box m={5} pt={2}>
-          
-         
-        </Box>
       </div>
       <Box m={2} pt={3}>
         <MyButton count={count} onClick={handleClick}/>

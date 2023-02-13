@@ -12,7 +12,7 @@ return (
 <FormControl>
         <FormLabel id="demo-radio-buttons">Choose your component:</FormLabel>
         <RadioGroup
-          aria-labelledy="radio-buttons"
+          aria-labelledby="radio-buttons"
           name="radio-buttons"
           value={value}
           onChange={onChange}
