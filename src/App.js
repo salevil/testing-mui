@@ -24,7 +24,7 @@ function App() {
 return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Header />
+      <Header count={count} onClick={handleClick}/>
       <Box m={2} pt={10}>
         <MyButton count={count} onClick={handleClick} />
       </Box>
