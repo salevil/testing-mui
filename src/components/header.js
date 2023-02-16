@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import MyButton from "./myButton";
 
 
-function Header({count, onClick}) {
+function Header({globalCount, setGlobalCount}) {
 
   return (
     <React.Fragment>
@@ -15,7 +15,7 @@ function Header({count, onClick}) {
               <Typography color="inherit" variant="h5" component="h1">
                 Testing MUI
             </Typography>
-              <MyButton count={count} onClick={onClick} />
+              <MyButton count={globalCount} setCount={setGlobalCount} />
         </Toolbar>
       </AppBar>
     </React.Fragment>

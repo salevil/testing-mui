@@ -6,27 +6,25 @@ import { CssBaseline, Box} from "@mui/material";
 import MyButton from "./components/myButton";
 import Header from "./components/header";
 import ControlledRadioButtonGroup from "./components/radioButton"
+import useClickCount from "./hooks/useClickCount";
 
 
 
 function App() {
   const theme = createTheme();
-  const [count, setCount] = useState(0);
   const [value, setValue] = useState("List")
+  const [globalCount, setGlobalCount] = useClickCount("List")
   
   const handleChange = (event) => {
       setValue(event.target.value);
   };
-  function handleClick() {
-    setCount(count + 1);
-  }
-
+  
 return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Header count={count} onClick={handleClick}/>
+      <Header globalCount={globalCount} setGlobalCount={setGlobalCount}/>
       <Box m={2} pt={10}>
-        <MyButton count={count} onClick={handleClick} />
+        <MyButton count={globalCount} setCount={setGlobalCount} />
       </Box>
       <ControlledRadioButtonGroup value={value} onChange={handleChange}/>
       <div>
@@ -38,7 +36,7 @@ return (
           />)}
       </div>
       <Box m={2} pt={3}>
-        <MyButton count={count} onClick={handleClick}/>
+        <MyButton count={globalCount} setCount={setGlobalCount} />
       </Box>
     </ThemeProvider>
   );
