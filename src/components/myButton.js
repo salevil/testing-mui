@@ -13,7 +13,14 @@ export default function MyButton({globalCount, setGlobalCount}) {
 
     return (
         <Button variant="contained" onClick={handleClick}>
-            You clicked this button {localCount} times, but {globalCount} times all buttons!
+            {localCount===0 && (`You haven't clicked this button yet, `)}
+            {localCount===1 && (`You clicked this button once, `)}
+            {localCount===2 && (`You clicked this button twice, `)}
+            {localCount > 2 && (`You clicked this button ${localCount} times, `)}
+            {globalCount===0 && (`nor have you clicked any other button yet, `)}
+            {globalCount===1 && (`and you clicked any button once!`)}
+            {globalCount===2 && (`and you clicked any button twice!`)}
+            {globalCount >2 && (`and you clicked any button ${globalCount} times!`)}
         </Button>
     );
 }
