@@ -2,13 +2,18 @@ import React from "react";
 import Button from "@mui/material/Button";
 import useClickCount from "../hooks/useClickCount";
 
-export default function MyButton({count, setCount}) {
+export default function MyButton({globalCount, setGlobalCount}) {
 
     const [localCount, setLocalCount] = useClickCount(0);
 
+    const handleClick = () => {
+        setLocalCount(localCount + 1);
+        setGlobalCount(globalCount + 1);
+      };
+
     return (
-        <Button variant="contained" onClick={() => setCount(count + 1)} onLocalClick={() => setLocalCount(localCount + 1)}>
-            You clicked this button {localCount} times, but {count} times all buttons!
+        <Button variant="contained" onClick={handleClick}>
+            You clicked this button {localCount} times, but {globalCount} times all buttons!
         </Button>
     );
 }
