@@ -17,8 +17,8 @@ return (
           value={value}
           onChange={onChange}
         >
-          <FormControlLabel value="List" control={<Radio />} label="List of fruits and veggies" />
-          <FormControlLabel value="Textfield" control={<Radio />} label="Text box input" /> 
+          <FormControlLabel value="List" control={<Radio />} label="List of fruit and veggies" />
+          <FormControlLabel value="Textfield" control={<Radio />} label="Add fruit or veggies to the list:" /> 
         </RadioGroup>
       </FormControl>
 );

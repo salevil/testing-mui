@@ -1,11 +1,5 @@
-
-const products = [
-    { title: 'Cabbage', isFruit: false, id: 1 },
-    { title: 'Garlic', isFruit: false, id: 2 },
-    { title: 'Apple', isFruit: true, id: 3 }
-];
-
-export default function FruitOrVeggie() {
+export default function FruitOrVeggie(props) {
+    const { products } = props;
     const listItems = products.map(product => 
        <li
         key={product.id}
@@ -13,7 +7,7 @@ export default function FruitOrVeggie() {
             color: product.isFruit ? 'magenta' : 'darkgreen'
         }} 
         >
-           {product.title} 
+           {product.name} 
         </li>
     );
 
