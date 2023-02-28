@@ -43,16 +43,15 @@ return (
       <Box m={2} pt={10}>
         <MyButton globalCount={globalCount} setGlobalCount={setGlobalCount} />
       </Box>
-      <ControlledRadioButtonGroup value={value} onChange={handleChange}/>
+      <ToggleListOrAdd value={value} onChange={handleChange} />
       <div>
         {value=== "List" ?(<FruitOrVeggie products={products} />) : (<CustomizedSelects onAddProduct={handleAddProduct} />)}
       </div>
       <Box m={2} pt={3}>
       <MyButton globalCount={globalCount} setGlobalCount={setGlobalCount} />
       </Box>
-      <ToggleListOrAdd value={value} onChange={handleChange} />
+      <ControlledRadioButtonGroup value={value} onChange={handleChange}/>
     </ThemeProvider>
-    
   );
 }
 
