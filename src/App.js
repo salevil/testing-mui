@@ -43,7 +43,9 @@ return (
       <Box m={2} pt={10}>
         <MyButton globalCount={globalCount} setGlobalCount={setGlobalCount} />
       </Box>
-      <ToggleListOrAdd value={value} onChange={handleChange} />
+      <Box m={2} pt={10}>
+        <ToggleListOrAdd value={value} onChange={handleChange} />
+      </Box>
       <div>
         {value=== "List" ?(<FruitOrVeggie products={products} />) : (<CustomizedSelects onAddProduct={handleAddProduct} />)}
       </div>

@@ -1,4 +1,10 @@
-import { ToggleButtonGroup, ToggleButton } from "@mui/material"
+import React from "react";
+import { ToggleButtonGroup, ToggleButton } from "@mui/material";
+import { styled } from "@mui/system";
+
+const StyledbButton = styled(ToggleButton) ({
+height:24,
+})
 
 export default function ToggleListOrAdd({value, onChange}) {
 
@@ -11,8 +17,8 @@ export default function ToggleListOrAdd({value, onChange}) {
         value={value}
         onChange={onChange}
         >
-        <ToggleButton size="small" value="List" sx={{ bgcolor: value === "List" ? 'primary.main' : 'background.paper', color: value === "List" ? 'white' : 'inherit'  }}>List of produce</ToggleButton>
-        <ToggleButton size="small" value="AddToList" sx={{ bgcolor: value === "AddToList" ? 'primary.main' : 'background.paper', color: value === "AddToList" ? 'white' : 'inherit' }}>Add produce</ToggleButton>
+        <StyledbButton size="small" value="List" sx={{ bgcolor: value === "List" ? 'primary.main' : 'background.paper', color: value === "List" ? 'white' : 'inherit'  }}>List of produce</StyledbButton>
+        <StyledbButton size="small" value="AddToList" sx={{ bgcolor: value === "AddToList" ? 'primary.main' : 'background.paper', color: value === "AddToList" ? 'white' : 'inherit' }}>Add produce</StyledbButton>
         </ToggleButtonGroup>
     )
 }
