@@ -11,10 +11,10 @@ function Header({globalCount, setGlobalCount}) {
     <React.Fragment>
       <AppBar>
         <Toolbar>
-              <Typography color="inherit" variant="h5" component="h1">
-                Testing MUI
-            </Typography>
-              <MyButton globalCount={globalCount} setGlobalCount={setGlobalCount} />
+          <Typography color="inherit" variant="h5" component="h1">
+              Testing MUI
+          </Typography>  
+          <MyButton globalCount={globalCount} setGlobalCount={setGlobalCount} />
         </Toolbar>
       </AppBar>
     </React.Fragment>
