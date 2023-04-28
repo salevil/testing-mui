@@ -1,7 +1,8 @@
-import { Grid, TextField } from "@mui/material";
+import { Grid } from "@mui/material";
 import Panel from "./panel";
 import ControlledRadioButtonGroup from "./controlledRadioButtonGroup";
 import FruitOrVeggie from "./fruitsOrVeggies";
+import AddFruitOrVeggies from "./addFruitOrVeggies";
 
 export default function PanelTwo({value, handleChange}) {
     console.log(">>>>>>", handleChange, value);
@@ -11,12 +12,7 @@ export default function PanelTwo({value, handleChange}) {
                 <h1>Panel 5</h1>
                 <ControlledRadioButtonGroup value={value} onChange={handleChange} />
                 <div>
-                    {value=== "List" ?(<FruitOrVeggie />) : (<TextField
-                        label="Enter text here:"
-                        variant="filled"
-                        multiline
-                        rows={5}
-                    />)}
+                    {value=== "List" ?(<FruitOrVeggie />) : (<AddFruitOrVeggies />)}
                 </div>
             </Grid>
         </Panel>

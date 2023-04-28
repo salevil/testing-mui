@@ -42,7 +42,7 @@ function App() {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: "#ffe0b2",
+    backgroundColor: darkMode ? "#795548" : "#ffe0b2",
     backgroundImage: "url('./picture/img0.jpeg')",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center center",
