@@ -5,7 +5,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { CssBaseline, Box } from "@mui/material";
 import MyButton from "./components/myButton";
 import Header from "./components/header";
-import ControlledRadioButtonGroup from "./components/radioButton"
+import ControlledRadioButtonGroup from "./components/controlledRadioButtonGroup"
 import PanelOne from "./components/panelOne";
 import PanelTwo from "./components/panelTwo";
 import PanelThree from "./components/panelThree";

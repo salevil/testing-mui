@@ -12,7 +12,7 @@ export default function MyButton({globalCount, setGlobalCount}) {
 
     return (
         <Button variant="contained" color="secondary" onClick={handleClick}>
-            Clicked {localCount} times this button but {globalCount} times all buttons!
+            Local Clicks: {localCount} | Global Clicks: {globalCount}
         </Button>
     );
 }
