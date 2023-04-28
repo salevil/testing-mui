@@ -13,9 +13,6 @@ import PanelFour from "./components/panelFour";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
-  const handleToggleTheme = () => {
-    setDarkMode(!darkMode);
-  };
 
   const theme = createTheme({
     palette: {
@@ -63,7 +60,7 @@ return (
         globalCount={globalCount}
         setGlobalCount={setGlobalCount}
         darkMode={darkMode}
-        onToggleTheme={handleToggleTheme}
+        setDarkMode={setDarkMode}
         enableStickyHeader
       />
       <div style={appLayout}>
