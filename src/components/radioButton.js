@@ -7,9 +7,8 @@ import FormLabel from "@mui/material/FormLabel";
 
 
 export default function ControlledRadioButtonGroup({value, onChange}) {
-
-return (
-<FormControl>
+  return (
+    <FormControl>
         <FormLabel id="demo-radio-buttons">Choose your component:</FormLabel>
         <RadioGroup
           aria-labelledby="radio-buttons"
@@ -20,6 +19,6 @@ return (
           <FormControlLabel value="List" control={<Radio />} label="List of fruits and veggies" />
           <FormControlLabel value="Textfield" control={<Radio />} label="Text box input" /> 
         </RadioGroup>
-      </FormControl>
+    </FormControl>
 );
 }
