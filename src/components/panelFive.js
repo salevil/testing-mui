@@ -8,7 +8,7 @@ export default function PanelTwo({value, handleChange}) {
     return (
         <Panel>
             <Grid>
-                <h1>Panel 2</h1>
+                <h1>Panel 5</h1>
                 <ControlledRadioButtonGroup value={value} onChange={handleChange} />
                 <div>
                     {value=== "List" ?(<FruitOrVeggie />) : (<TextField

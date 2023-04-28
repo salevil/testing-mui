@@ -1,15 +1,13 @@
 import React, {useState}from "react";
-import TextField from "@mui/material/TextField";
-import FruitOrVeggie from "./components/fruitsOrVeggies";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { CssBaseline, Box } from "@mui/material";
 import MyButton from "./components/myButton";
 import Header from "./components/header";
-import ControlledRadioButtonGroup from "./components/controlledRadioButtonGroup"
 import PanelOne from "./components/panelOne";
 import PanelTwo from "./components/panelTwo";
 import PanelThree from "./components/panelThree";
 import PanelFour from "./components/panelFour";
+import PanelFive from "./components/panelFive";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -52,7 +50,7 @@ function App() {
     backgroundAttachment: "fixed",
     height: "100%"
   };
-
+console.log("App>>>>", handleChange, value);
 return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -66,20 +64,11 @@ return (
       <div style={appLayout}>
         <PanelOne />
         <MyButton globalCount={globalCount} setGlobalCount={setGlobalCount} />
-        <PanelTwo value={value} onChange={handleChange} />
+        <PanelTwo value={value} handleChange={handleChange} />
         <MyButton globalCount={globalCount} setGlobalCount={setGlobalCount} />
         <PanelThree />
-        <h1>Panel 4</h1>
-        <ControlledRadioButtonGroup value={value} onChange={handleChange}/>
-        <div>
-          {value=== "List" ?(<FruitOrVeggie />) : (<TextField
-              label="Enter text here:"
-              variant="filled"
-              multiline
-              rows={5}
-            />)}
-        </div>
         <PanelFour />
+        <PanelFive value={value} handleChange={handleChange} />
       </div>
       <Box m={2} pt={3}>
         <MyButton globalCount={globalCount} setGlobalCount={setGlobalCount} />
