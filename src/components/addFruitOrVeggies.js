@@ -15,7 +15,7 @@ export default function AddFruitOrVeggies({value, handleChange}) {
 // import { useState } from 'react';
 // import { TextField, FormControlLabel, Checkbox, Button } from '@mui/material';
 
-// export default function MyForm() {
+// export default function AddFruitOrVeggies() {
 //   const [name, setName] = useState('');
 //   const [isFruit, setIsFruit] = useState(false);
 

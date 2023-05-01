@@ -1,6 +1,6 @@
 import * as React from 'react';
 import TextField from "@mui/material/TextField";
-import FruitOrVeggie from "./fruitsOrVeggies";
+import FruitOrVeggies from "./fruitOrVeggies";
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -40,13 +40,13 @@ function a11yProps(index) {
   };
 }
 
-export default function BasicTabs() {
+export default function BasicTabs(products) {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
+  console.log("CompTab>>>>>>PRODUCTS", products);
   return (
     <Box sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
@@ -56,7 +56,7 @@ export default function BasicTabs() {
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        <FruitOrVeggie />
+        <FruitOrVeggies products={products}/>
       </TabPanel>
       <TabPanel value={value} index={1}>
         <TextField />

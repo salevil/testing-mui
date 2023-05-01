@@ -43,14 +43,20 @@ function App() {
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: darkMode ? "#795548" : "#ffe0b2",
-    backgroundImage: "url('./picture/img0.jpeg')",
+    backgroundImage: "url('./picture/img0.jpg')",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center center",
     backgroundSize: "cover",
     backgroundAttachment: "fixed",
     height: "100%"
   };
-console.log("App>>>>", handleChange, value);
+
+  const products = [
+    { title: 'Cabbage', isFruit: false, id: 1 },
+    { title: 'Garlic', isFruit: false, id: 2 },
+    { title: 'Apple', isFruit: true, id: 3 }
+];
+
 return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -62,7 +68,7 @@ return (
         enableStickyHeader
       />
       <div style={appLayout}>
-        <PanelOne />
+        <PanelOne products={products} />
         <MyButton globalCount={globalCount} setGlobalCount={setGlobalCount} />
         <PanelTwo value={value} handleChange={handleChange} />
         <MyButton globalCount={globalCount} setGlobalCount={setGlobalCount} />
