@@ -6,10 +6,9 @@ const panelStyling = {
     justifyContent: 'center',
     alignItems: 'center',
     height: '50vh',
-    // backgroundColor: '#e0f2f1',
     width: '1000px',
     minHeight: '320px',
-    padding: '24px',
+    padding: '5px 24px 24px 24px',
     margin: '24px'
     };
 
