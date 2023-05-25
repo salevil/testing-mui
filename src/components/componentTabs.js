@@ -1,11 +1,11 @@
 import * as React from 'react';
-import TextField from "@mui/material/TextField";
 import FruitOrVeggies from "./fruitOrVeggies";
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import AddFruitOrVeggies from './addFruitOrVeggies';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -59,7 +59,7 @@ export default function BasicTabs(products) {
         <FruitOrVeggies products={products}/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <TextField />
+        <AddFruitOrVeggies />
       </TabPanel>
     </Box>
   );

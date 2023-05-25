@@ -7,19 +7,19 @@
 
 export default function FruitOrVeggies(products) {
     console.log("Fru&Veggies>>>>>>PRODUCTS", products);
-    const listItems = products.map(product => 
-       <li
-        key={product.id}
-        style={{
-            color: product.isFruit ? 'magenta' : 'darkgreen'
-        }} 
-        >
-           {product.title} 
-        </li>
-    );
+    // const listItems = products.map(product => 
+    //    <li
+    //     key={product.id}
+    //     style={{
+    //         color: product.isFruit ? 'magenta' : 'darkgreen'
+    //     }} 
+    //     >
+    //        {product.title} 
+    //     </li>
+    // );
 
     return (
-        <ul>{listItems}</ul>
-        // <h3>FruitOrVeggies</h3>
+        // <ul>{listItems}</ul>
+        <h3>FruitOrVeggies</h3>
     )
 }

@@ -43,7 +43,7 @@ function App() {
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: darkMode ? "#795548" : "#ffe0b2",
-    backgroundImage: "url('./picture/img0.jpg')",
+    backgroundImage: "url('./picture/donutPic.jpg')",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center center",
     backgroundSize: "cover",
@@ -56,7 +56,7 @@ function App() {
     { title: 'Garlic', isFruit: false, id: 2 },
     { title: 'Apple', isFruit: true, id: 3 }
 ];
-
+console.log("App>>>>>>PRODUCTS", products);
 return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
