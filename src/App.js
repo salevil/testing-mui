@@ -42,6 +42,10 @@ function App() {
       setValue(event.target.value);
   };
   
+  const handleProductSubmit = (newProduct) => {
+    setProducts([...products, newProduct]);
+  }
+
   const appLayout = {
     display: 'flex',
     flexDirection: 'column',
@@ -69,7 +73,7 @@ return (
         enableStickyHeader
       />
       <div style={appLayout}>
-        <PanelOne products={products} setProducts={setProducts} />
+        <PanelOne products={products} setProducts={setProducts} onProductSubmit={handleProductSubmit} />
         <MyButton globalCount={globalCount} setGlobalCount={setGlobalCount} />
         {/* <PanelTwo value={value} handleChange={handleChange} /> */}
         <MyButton globalCount={globalCount} setGlobalCount={setGlobalCount} />

@@ -40,7 +40,7 @@ function a11yProps(index) {
   };
 }
 
-export default function BasicTabs({products, setProducts}) {
+export default function BasicTabs({products, setProducts, onProductSubmit}) {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -59,7 +59,7 @@ export default function BasicTabs({products, setProducts}) {
         <FruitOrVeggies products={products} />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <AddFruitOrVeggies products={products} setProducts={setProducts} />
+        <AddFruitOrVeggies products={products} setProducts={setProducts} onProductSubmit={onProductSubmit} />
       </TabPanel>
     </Box>
   );
