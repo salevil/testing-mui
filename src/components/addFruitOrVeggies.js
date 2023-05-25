@@ -1,21 +1,7 @@
-// import { FormControl, InputLabel, Input } from "@mui/material";
-// export default function AddFruitOrVeggies({value, handleChange}) {
-//     console.log(">>>>>>", handleChange, value);
-//     return (
-//         <FormControl>
-//             <InputLabel htmlFor="name">Name:</InputLabel>
-//             <Input id="name" aria-describedby="name" />
-//             <InputLabel htmlFor="type">Is a fruit:</InputLabel>
-//             <Input id="isFruit" aria-describedby="type" />
-//         </FormControl>
-
-//     )
-// }
-
 import { useState } from 'react';
 import { TextField, FormControlLabel, Checkbox, Button } from '@mui/material';
 
-export default function AddFruitOrVeggies({ onProductSubmit}) {
+export default function AddFruitOrVeggies({onProductSubmit}) {
   const [name, setName] = useState('');
   const [isFruit, setIsFruit] = useState(false);
 

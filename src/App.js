@@ -32,7 +32,12 @@ function App() {
 
   const [value, setValue] = useState("List")
   const [globalCount, setGlobalCount] = useState(0)
-  
+  const [products, setProducts] = useState([
+  { title: 'Cabbage', isFruit: false, id: 1 },
+  { title: 'Garlic', isFruit: false, id: 2 },
+  { title: 'Apple', isFruit: true, id: 3 }
+  ]);
+
   const handleChange = (event) => {
       setValue(event.target.value);
   };
@@ -51,11 +56,7 @@ function App() {
     height: "100%"
   };
 
-  const products = [
-    { title: 'Cabbage', isFruit: false, id: 1 },
-    { title: 'Garlic', isFruit: false, id: 2 },
-    { title: 'Apple', isFruit: true, id: 3 }
-];
+
 console.log("App>>>>>>PRODUCTS", products);
 return (
     <ThemeProvider theme={theme}>
@@ -68,13 +69,13 @@ return (
         enableStickyHeader
       />
       <div style={appLayout}>
-        <PanelOne products={products} />
+        <PanelOne products={products} setProducts={setProducts} />
         <MyButton globalCount={globalCount} setGlobalCount={setGlobalCount} />
-        <PanelTwo value={value} handleChange={handleChange} />
+        {/* <PanelTwo value={value} handleChange={handleChange} /> */}
         <MyButton globalCount={globalCount} setGlobalCount={setGlobalCount} />
-        <PanelThree />
+        {/* <PanelThree />
         <PanelFour />
-        <PanelFive value={value} handleChange={handleChange} />
+        <PanelFive value={value} handleChange={handleChange} /> */}
       </div>
       <Box m={2} pt={3}>
         <MyButton globalCount={globalCount} setGlobalCount={setGlobalCount} />
