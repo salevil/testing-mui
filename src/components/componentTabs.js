@@ -1,5 +1,5 @@
 import * as React from 'react';
-import FruitOrVeggies from "./fruitOrVeggies";
+import Groceries from "./groceries";
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -40,26 +40,26 @@ function a11yProps(index) {
   };
 }
 
-export default function BasicTabs({products, setProducts, onProductSubmit}) {
+export default function BasicTabs({groceries, setGroceries, onGroceriesSubmit}) {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  console.log("CompTab>>>>>>PRODUCTS", products);
+
   return (
     <Box sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-          <Tab label="Produce List" {...a11yProps(0)} />
-          <Tab label="Add Fruit or Veggies" {...a11yProps(1)} />
+          <Tab label="Prepare Grocery List" {...a11yProps(0)} />
+          <Tab label="Add Items" {...a11yProps(1)} />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        <FruitOrVeggies products={products} />
+        <Groceries groceries={groceries} />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <AddFruitOrVeggies products={products} setProducts={setProducts} onProductSubmit={onProductSubmit} />
+        <AddFruitOrVeggies groceries={groceries} setGroceries={setGroceries} onGroceriesSubmit={onGroceriesSubmit} />
       </TabPanel>
     </Box>
   );

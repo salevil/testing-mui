@@ -4,10 +4,7 @@ import { CssBaseline, Box } from "@mui/material";
 import MyButton from "./components/myButton";
 import Header from "./components/header";
 import PanelOne from "./components/panelOne";
-import PanelTwo from "./components/panelTwo";
-import PanelThree from "./components/panelThree";
 import PanelFour from "./components/panelFour";
-import PanelFive from "./components/panelFive";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -32,18 +29,19 @@ function App() {
 
   const [value, setValue] = useState("List")
   const [globalCount, setGlobalCount] = useState(0)
-  const [products, setProducts] = useState([
-  { title: 'Cabbage', isFruit: false, id: 1 },
-  { title: 'Garlic', isFruit: false, id: 2 },
-  { title: 'Apple', isFruit: true, id: 3 }
+  const [groceries, setGroceries] = useState([
+  { name: 'Cabbage', category: "produce", id: 1 },
+  { name: 'Garlic', category: "produce", id: 2 },
+  { name: 'Apple', category: "produce", id: 3 },
+  { name: 'Toilet Paper', category: "house supplies", id: 4 }
   ]);
 
   const handleChange = (event) => {
       setValue(event.target.value);
   };
   
-  const handleProductSubmit = (newProduct) => {
-    setProducts([...products, newProduct]);
+  const handleGroceriesSubmit = (newProduct) => {
+    setGroceries([...groceries, newGroceries]);
   }
 
   const appLayout = {
@@ -60,8 +58,6 @@ function App() {
     height: "100%"
   };
 
-
-console.log("App>>>>>>PRODUCTS", products);
 return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -73,13 +69,10 @@ return (
         enableStickyHeader
       />
       <div style={appLayout}>
-        <PanelOne products={products} setProducts={setProducts} onProductSubmit={handleProductSubmit} />
+        <PanelOne groceries={groceries} setGroceries={setGroceries} onGroceriesSubmit={handleGroceriesSubmit} />
         <MyButton globalCount={globalCount} setGlobalCount={setGlobalCount} />
-        {/* <PanelTwo value={value} handleChange={handleChange} /> */}
-        <MyButton globalCount={globalCount} setGlobalCount={setGlobalCount} />
-        {/* <PanelThree />
         <PanelFour />
-        <PanelFive value={value} handleChange={handleChange} /> */}
+        <MyButton globalCount={globalCount} setGlobalCount={setGlobalCount} />
       </div>
       <Box m={2} pt={3}>
         <MyButton globalCount={globalCount} setGlobalCount={setGlobalCount} />
