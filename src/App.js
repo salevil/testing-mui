@@ -35,6 +35,12 @@ function App() {
   { name: 'Apple', category: "produce", id: 3 },
   { name: 'Toilet Paper', category: "house supplies", id: 4 }
   ]);
+  const[categories, setCategories] = useState([
+    {name: "produce", id: 1},
+    {name: "dairy", id: 2},
+    {name: "meat", id: 3},
+    {name: "house supplies", id: 4}
+  ])
 
   const handleChange = (event) => {
       setValue(event.target.value);
@@ -42,6 +48,9 @@ function App() {
   
   const handleGroceriesSubmit = (newItem) => {
     setGroceries([...groceries, newItem]);
+  }
+  const handleCategorySubmit = (newCategory) => {
+    setCategories([...categories, newCategory]);
   }
 
   const appLayout = {
@@ -71,7 +80,14 @@ return (
       <div style={appLayout}>
         <GroceryList />
         <MyButton globalCount={globalCount} setGlobalCount={setGlobalCount} />
-        <GroceryListMaker groceries={groceries} setGroceries={setGroceries} onGroceriesSubmit={handleGroceriesSubmit} />
+        <GroceryListMaker
+          groceries={groceries}
+          setGroceries={setGroceries}
+          categories={categories}
+          setCategories={setCategories}
+          onGroceriesSubmit={handleGroceriesSubmit}
+          onCategorySubmit={handleCategorySubmit}
+        />
         <MyButton globalCount={globalCount} setGlobalCount={setGlobalCount} />
       </div>
       <Box m={2} pt={3}>

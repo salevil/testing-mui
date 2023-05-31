@@ -20,7 +20,7 @@ export default function AddItems({onGroceriesSubmit}) {
       category: category,
       id: Date.now()
     }
-    onItemSubmit(newItem);
+    onGroceriesSubmit(newItem);
     setItem('');
     setCategory('');
   };
@@ -29,21 +29,24 @@ export default function AddItems({onGroceriesSubmit}) {
     <form onSubmit={handleSubmit}>
       <TextField
         label="Name of item"
-        value={name}
+        value={item}
         onChange={(event) => setItem(event.target.value)}
         fullWidth
         margin="normal"
       />
         <FormControl>
           <FormLabel>Category</FormLabel>
-          <RadioGroup>
+          <RadioGroup value={category} onChange={(event) => setCategory(event.target.value)} >
+            {categories.map(category) => {
+              
+            }
             <FormControlLabel value="produce" control={<Radio />} label="produce"/>
             <FormControlLabel value="dairy" control={<Radio />} label="dairy"/>
             <FormControlLabel value="meat" control={<Radio />} label="meat"/>
             <FormControlLabel value="house supplies" control={<Radio />} label="house supplies"/>
           </RadioGroup>
         </FormControl>
-      <Button type="submit" onChange={(event) => setCategory(event.target.value)}>Submit</Button>
+      <Button type="submit" variant="contained">Submit</Button>
     </form>
   );
 }
