@@ -3,8 +3,8 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { CssBaseline, Box } from "@mui/material";
 import MyButton from "./components/myButton";
 import Header from "./components/header";
-import PanelOne from "./components/panelOne";
-import PanelFour from "./components/panelFour";
+import GroceryListMaker from "./components/groceries/groceryListMaker";
+import GroceryList from "./components/groceries/groceryList";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -40,8 +40,8 @@ function App() {
       setValue(event.target.value);
   };
   
-  const handleGroceriesSubmit = (newProduct) => {
-    setGroceries([...groceries, newGroceries]);
+  const handleGroceriesSubmit = (newItem) => {
+    setGroceries([...groceries, newItem]);
   }
 
   const appLayout = {
@@ -69,9 +69,9 @@ return (
         enableStickyHeader
       />
       <div style={appLayout}>
-        <PanelOne groceries={groceries} setGroceries={setGroceries} onGroceriesSubmit={handleGroceriesSubmit} />
+        <GroceryList />
         <MyButton globalCount={globalCount} setGlobalCount={setGlobalCount} />
-        <PanelFour />
+        <GroceryListMaker groceries={groceries} setGroceries={setGroceries} onGroceriesSubmit={handleGroceriesSubmit} />
         <MyButton globalCount={globalCount} setGlobalCount={setGlobalCount} />
       </div>
       <Box m={2} pt={3}>

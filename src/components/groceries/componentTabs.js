@@ -5,7 +5,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import AddFruitOrVeggies from './addFruitOrVeggies';
+import AddItems from './addItems';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -59,7 +59,7 @@ export default function BasicTabs({groceries, setGroceries, onGroceriesSubmit}) 
         <Groceries groceries={groceries} />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <AddFruitOrVeggies groceries={groceries} setGroceries={setGroceries} onGroceriesSubmit={onGroceriesSubmit} />
+        <AddItems groceries={groceries} setGroceries={setGroceries} onGroceriesSubmit={onGroceriesSubmit} />
       </TabPanel>
     </Box>
   );
