@@ -3,6 +3,7 @@ import GroceryList from "./groceryList";
 import GroceryListMaker from "./groceryListMaker";
 
 function Groceries() {
+    const [groceryList,setGroceryList] = useState ([]);
 
     const [groceries, setGroceries] = useState([
     { name: 'Cabbage', category: "produce", store: "Aldi", aisle: "1", id: 1 },
@@ -42,8 +43,10 @@ function Groceries() {
 
     return (
     <>
-        <GroceryList />
+        <GroceryList groceryList={groceryList} setGroceryList={setGroceryList}/>
         <GroceryListMaker
+            groceryList={groceryList}
+            setGroceryList={setGroceryList}
             groceries={groceries}
             setGroceries={setGroceries}
             onGroceriesSubmit={handleGroceriesSubmit}

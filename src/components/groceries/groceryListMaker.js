@@ -15,7 +15,9 @@ export default function GroceryListMaker({
     onStoreSubmit,
     aisles,
     setAisles,
-    onAisleSubmit
+    onAisleSubmit,
+    groceryList,
+    setGroceryList
     }) {
 
     return (

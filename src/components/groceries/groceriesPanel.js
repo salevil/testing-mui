@@ -1,3 +1,5 @@
+import { DataGrid } from '@mui/material';
+
 export default function GroceriesPanel({ groceries }) {
     return (
       <ul>

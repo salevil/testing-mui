@@ -5,7 +5,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import AddItems from './addItems';
+import AddNewItems from './addNewItems';
 import AddCategory from './addCategory';
 import AddStore from './addStore';
 import AddAisle from './addAisle';
@@ -77,7 +77,7 @@ export default function BasicTabs({
         <GroceriesPanel groceries={groceries} />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <AddItems
+        <AddNewItems
           groceries={groceries}
           setGroceries={setGroceries}
           onGroceriesSubmit={onGroceriesSubmit}

@@ -1,18 +1,13 @@
 import { useState } from 'react';
 import {
   TextField,
-  FormControlLabel,
   FormControl,
-  RadioGroup,
-  Radio,
-  FormLabel,
   Button,
-  InputLabel,
   NativeSelect,
   Box
 } from '@mui/material';
 
-export default function AddItems({
+export default function AddNewItems({
     groceries,
     setGroceries,
     onGroceriesSubmit,
@@ -55,14 +50,12 @@ export default function AddItems({
       />
       <Box sx={{ minWidth: 120, maxWidth: 200 }}>
         <FormControl fullWidth>
-          <InputLabel variant="standard" htmlFor="uncontrolled-native">
-            Choose Category
-          </InputLabel>
           <NativeSelect
             defaultValue="none"
             variant="filled"
             onChange={(event) => setCategory(event.target.value)}
           >
+            <option value=''>Choose a category</option>
           {categories.map((category) => (
             <option key={category.key} value={category.name}>{category.name}</option>
           ))}
@@ -71,12 +64,10 @@ export default function AddItems({
       </Box>
       <Box sx={{ minWidth: 120, maxWidth: 200 }}>
         <FormControl fullWidth>
-          <InputLabel variant="standard" htmlFor="uncontrolled-native">
-            Store
-          </InputLabel>
           <NativeSelect
             onChange={(event) => setStore(event.target.value)}
           >
+            <option value=''>Choose a store</option>
           {stores.map((store) => (
             <option key={store.key} value={store.name}>{store.name}</option>
           ))}
@@ -85,12 +76,10 @@ export default function AddItems({
       </Box>
       <Box sx={{ minWidth: 120, maxWidth: 200 }}>
         <FormControl fullWidth>
-          <InputLabel variant="standard" htmlFor="uncontrolled-native">
-            Aisle
-          </InputLabel>
           <NativeSelect
             onChange={(event) => setAisle(event.target.value)}
           >
+            <option value=''>Choose an aisle number</option>
           {aisles.map((aisle) => (
             <option key={aisle.key} value={aisle.name}>{aisle.name}</option>
           ))}
