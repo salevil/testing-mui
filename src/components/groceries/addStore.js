@@ -4,25 +4,25 @@ import {
   Button
 } from '@mui/material';
 
-export default function AddCategory({onCategorySubmit}) {
-  const [category, setCategory] = useState();
+export default function AddStore({onStoreSubmit}) {
+  const [store, setStore] = useState();
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const newCategory = {
-      name: category,
+    const newStore = {
+      name: store,
       id: Date.now()
     }
-    onCategorySubmit(newCategory);
-    setCategory('');
+    onStoreSubmit(newStore);
+    setStore('');
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <TextField
-        label="Name of new Category"
-        value={category}
-        onChange={(event) => setCategory(event.target.value)}
+        label="Name of new Store"
+        value={store}
+        onChange={(event) => setStore(event.target.value)}
         fullWidth
         margin="normal"
       />

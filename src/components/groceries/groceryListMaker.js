@@ -2,14 +2,22 @@ import { Grid } from "@mui/material";
 import Panel from "../panel";
 import ComponentTabs from "./componentTabs";
 
+
 export default function GroceryListMaker({
     groceries, 
     setGroceries,
+    onGroceriesSubmit,
     categories,
     setCategories,
-    onGroceriesSubmit,
-    onCategorySubmit
+    onCategorySubmit,
+    stores,
+    setStores,
+    onStoreSubmit,
+    aisles,
+    setAisles,
+    onAisleSubmit
     }) {
+
     return (
         <Panel>
             <Grid>
@@ -21,6 +29,12 @@ export default function GroceryListMaker({
                     setCategories={setCategories}
                     onGroceriesSubmit={onGroceriesSubmit}
                     onCategorySubmit={onCategorySubmit}
+                    stores={stores}
+                    setStores={setStores}
+                    onStoreSubmit={onStoreSubmit}
+                    aisles={aisles}
+                    setAisles={setAisles}
+                    onAisleSubmit={onAisleSubmit}
                 />
             </Grid>
         </Panel>

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Groceries from "./groceries";
+import GroceriesPanel from "./groceriesPanel";
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -7,6 +7,8 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import AddItems from './addItems';
 import AddCategory from './addCategory';
+import AddStore from './addStore';
+import AddAisle from './addAisle';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -44,36 +46,47 @@ function a11yProps(index) {
 export default function BasicTabs({
   groceries, 
   setGroceries,
+  onGroceriesSubmit,
   categories,
   setCategories,
-  onGroceriesSubmit,
-  onCategorySubmit
+  onCategorySubmit,
+  stores,
+  setStores,
+  onStoreSubmit,
+  aisles,
+  setAisles,
+  onAisleSubmit,
   }) {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
   return (
     <Box sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-          <Tab label="Prepare Grocery List" {...a11yProps(0)} />
-          <Tab label="Add Items" {...a11yProps(1)} />
+          <Tab label="Start a Grocery List" {...a11yProps(0)} />
+          <Tab label="Add new Items" {...a11yProps(1)} />
           <Tab label="Add new Category" {...a11yProps(2)} />
+          <Tab label="Add new Store" {...a11yProps(3)} />
+          <Tab label="Add new Aisle Number" {...a11yProps(4)} />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        <Groceries groceries={groceries} />
+        <GroceriesPanel groceries={groceries} />
       </TabPanel>
       <TabPanel value={value} index={1}>
         <AddItems
           groceries={groceries}
           setGroceries={setGroceries}
+          onGroceriesSubmit={onGroceriesSubmit}
           categories={categories}
           setCategories={setCategories}
-          onGroceriesSubmit={onGroceriesSubmit}
+          stores={stores}
+          setStores={setStores}
+          aisles={aisles}
+          setAisles={setAisles}
         />
       </TabPanel>
       <TabPanel value={value} index={2}>
@@ -81,6 +94,20 @@ export default function BasicTabs({
           categories={categories}
           setCategories={setCategories}
           onCategorySubmit={onCategorySubmit}
+        />
+      </TabPanel>
+      <TabPanel value={value} index={3}>
+        <AddStore
+          stores={stores}
+          setStores={setStores}
+          onStoreSubmit={onStoreSubmit}
+        />
+      </TabPanel>
+      <TabPanel value={value} index={4}>
+        <AddAisle
+          aisles={aisles}
+          setAisles={setAisles}
+          onAisleSubmit={onAisleSubmit}
         />
       </TabPanel>
     </Box>
