@@ -56,9 +56,11 @@ export default function AddItems({
       <Box sx={{ minWidth: 120, maxWidth: 200 }}>
         <FormControl fullWidth>
           <InputLabel variant="standard" htmlFor="uncontrolled-native">
-            Category
+            Choose Category
           </InputLabel>
           <NativeSelect
+            defaultValue="none"
+            variant="filled"
             onChange={(event) => setCategory(event.target.value)}
           >
           {categories.map((category) => (
