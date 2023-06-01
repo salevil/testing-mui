@@ -41,6 +41,9 @@ export default function AddItems({
     setAisle('');
   };
 
+  console.log(">>>>Groceries", groceries);
+  console.log(">>>>Aisles", aisles);
+  console.log(">>>>Stores", stores);
   return (
     <form onSubmit={handleSubmit}>
       <TextField
@@ -50,58 +53,48 @@ export default function AddItems({
         fullWidth
         margin="normal"
       />
-      <FormControl>
-        <FormLabel>Category</FormLabel>
-        <RadioGroup value={category} onChange={(event) => setCategory(event.target.value)}>
-          {categories.map((category) => (
-            <FormControlLabel
-              key={category.key}
-              value={category.name}
-              control={<Radio />}
-              label={category.name}
-            />
-          ))}
-        </RadioGroup>
-      </FormControl>
-      <FormControl>
-        <FormLabel>Store</FormLabel>
-        <RadioGroup value={store} onChange={(event) => setStore(event.target.value)}>
-          {stores.map((store) => (
-            <FormControlLabel
-              key={store.key}
-              value={store.name}
-              control={<Radio />}
-              label={store.name}
-            />
-          ))}
-        </RadioGroup>
-      </FormControl>
-      <FormControl>
-        <FormLabel>Aisle</FormLabel>
-        <RadioGroup value={aisle} onChange={(event) => setAisle(event.target.value)}>
-          {aisles.map((aisle) => (
-            <FormControlLabel
-              key={aisle.key}
-              value={aisle.name}
-              control={<Radio />}
-              label={aisle.name}
-            />
-          ))}
-        </RadioGroup>
-      </FormControl>
       <Box sx={{ minWidth: 120, maxWidth: 200 }}>
-      <FormControl fullWidth>
-        <InputLabel variant="standard" htmlFor="uncontrolled-native">
-          Store
-        </InputLabel>
-        <NativeSelect
-          defaultValue="Choose store"
-        >
-          <option value={10}>Aldi</option>
-          <option value={20}>Costco</option>
-        </NativeSelect>
-      </FormControl>
-    </Box>
+        <FormControl fullWidth>
+          <InputLabel variant="standard" htmlFor="uncontrolled-native">
+            Category
+          </InputLabel>
+          <NativeSelect
+            onChange={(event) => setCategory(event.target.value)}
+          >
+          {categories.map((category) => (
+            <option key={category.key} value={category.name}>{category.name}</option>
+          ))}
+          </NativeSelect>
+        </FormControl>
+      </Box>
+      <Box sx={{ minWidth: 120, maxWidth: 200 }}>
+        <FormControl fullWidth>
+          <InputLabel variant="standard" htmlFor="uncontrolled-native">
+            Store
+          </InputLabel>
+          <NativeSelect
+            onChange={(event) => setStore(event.target.value)}
+          >
+          {stores.map((store) => (
+            <option key={store.key} value={store.name}>{store.name}</option>
+          ))}
+          </NativeSelect>
+        </FormControl>
+      </Box>
+      <Box sx={{ minWidth: 120, maxWidth: 200 }}>
+        <FormControl fullWidth>
+          <InputLabel variant="standard" htmlFor="uncontrolled-native">
+            Aisle
+          </InputLabel>
+          <NativeSelect
+            onChange={(event) => setAisle(event.target.value)}
+          >
+          {aisles.map((aisle) => (
+            <option key={aisle.key} value={aisle.name}>{aisle.name}</option>
+          ))}
+          </NativeSelect>
+        </FormControl>
+      </Box>
       <Box display="flex" justifyContent="flex-end" >
         <Button size="small" type="submit" variant="contained" >Submit</Button>
       </Box>
