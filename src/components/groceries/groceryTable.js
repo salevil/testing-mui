@@ -8,6 +8,7 @@ import {
   TableCell,
   Checkbox,
   Button,
+  Typography,
 } from '@mui/material';
 
 export default function GroceryTable({ categories, groceries, onAddItems }) {
@@ -36,7 +37,7 @@ export default function GroceryTable({ categories, groceries, onAddItems }) {
         <TableHead>
           <TableRow>
             {categories.map((category) => (
-              <TableCell key={category} align="center">
+              <TableCell key={category.name} align="center">
                 {category.name}
               </TableCell>
             ))}
@@ -45,14 +46,20 @@ export default function GroceryTable({ categories, groceries, onAddItems }) {
         <TableBody>
           {groceries.map((item) => (
             <TableRow key={item.id}>
-              <TableCell>{item.name}</TableCell>
-                <Checkbox
-                  // checked={selectedItems.some(
-                  //   (selectedItem) =>
-                  //     selectedItem.id === item.id && selectedItem.category === category
-                  // )}
-                  // onChange={(event) => handleCheckboxChange(event, item)}
-                />
+              {categories.map((category) => (
+                <TableCell key={category.name} align="center">
+                  {category.name === item.category && (
+                    <div>
+                      <Typography>{item.name}</Typography>
+                      <Checkbox
+                        checked={selectedItems.some((selectedItem) =>
+                        selectedItem.id === item.id)}
+                        onChange={(event) => handleCheckboxChange(event, item)}
+                      />
+                    </div>
+                  )}
+                </TableCell>
+              ))}   
             </TableRow>
           ))}
         </TableBody>
