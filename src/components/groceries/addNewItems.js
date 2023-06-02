@@ -57,8 +57,8 @@ export default function AddNewItems({
           >
             <option value=''>Choose a category</option>
             {categories.map((category) => (
-            <option key={category.key} value={category.name}>{category.name}</option>
-          ))}
+              <option key={category.key} value={category.name}>{category.name}</option>
+            ))}
           </NativeSelect>
         </FormControl>
       </Box>

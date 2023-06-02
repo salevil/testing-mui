@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import {
   Table,
   TableContainer,
@@ -7,23 +6,17 @@ import {
   TableRow,
   TableCell,
   Checkbox,
-  Button,
-  Typography,
+  Button
 } from '@mui/material';
 
-export default function GroceryTable({ categories, groceries, onAddItems }) {
-
-  const [selectedItems, setSelectedItems] = useState([]);
-
-  const handleCheckboxChange = (event, item) => {
-    if (event.target.checked) {
-      setSelectedItems((prevSelectedItems) => [...prevSelectedItems, item]);
-    } else {
-      setSelectedItems((prevSelectedItems) =>
-        prevSelectedItems.filter((selectedItem) => selectedItem.id !== item.id)
-      );
-    }
-  };
+export default function GroceryTable({
+  categories,
+  groceries,
+  onAddItems,
+  selectedItems,
+  setSelectedItems,
+  onCheckboxChange
+}) {
 
   const handleAddItems = () => {
     onAddItems(selectedItems);
@@ -54,7 +47,7 @@ export default function GroceryTable({ categories, groceries, onAddItems }) {
                       <Checkbox
                         checked={selectedItems.some((selectedItem) =>
                         selectedItem.id === item.id)}
-                        onChange={(event) => handleCheckboxChange(event, item)}
+                        onChange={(event) => onCheckboxChange(event, item)}
                       />
                     </div>
                   )}

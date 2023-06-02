@@ -27,6 +27,7 @@ function Groceries() {
         {name: "3", id: 3},
         {name: "4", id: 4},
     ]);
+    const [selectedItems, setSelectedItems] = useState([]);
 
     const handleGroceriesSubmit = (newItem) => {
         setGroceries([...groceries, newItem]);
@@ -40,10 +41,26 @@ function Groceries() {
     const handleAisleSubmit = (newAisle) => {
         setAisles([...aisles, newAisle]);
     }
+    const handleCheckboxChange = (event, item) => {
+        if (event.target.checked) {
+          setSelectedItems((prevSelectedItems) => [...prevSelectedItems, item]);
+        } else {
+          setSelectedItems((prevSelectedItems) =>
+            prevSelectedItems.filter((selectedItem) => selectedItem.id !== item.id)
+          );
+        }
+      };
+    
+      console.log(">>>>>>>>>>>LIST", selectedItems);
 
     return (
     <>
-        <GroceryList groceryList={groceryList} setGroceryList={setGroceryList}/>
+        <GroceryList
+            groceryList={groceryList}
+            setGroceryList={setGroceryList}
+            selectedItems={selectedItems}
+            setSelectedItems={setSelectedItems}
+        />
         <GroceryListMaker
             groceryList={groceryList}
             setGroceryList={setGroceryList}
@@ -59,6 +76,9 @@ function Groceries() {
             aisles={aisles}
             setAisles={setAisles}
             onAisleSubmit={handleAisleSubmit}
+            selectedItems={selectedItems}
+            setSelectedItems={setSelectedItems}
+            onCheckboxChange={handleCheckboxChange}
         />
     </>
   )

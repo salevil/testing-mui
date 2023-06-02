@@ -56,6 +56,9 @@ export default function BasicTabs({
   aisles,
   setAisles,
   onAisleSubmit,
+  selectedItems,
+  setSelectedItems,
+  onCheckboxChange
   }) {
   const [value, setValue] = React.useState(0);
 
@@ -74,7 +77,13 @@ export default function BasicTabs({
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        <GroceryTable groceries={groceries} categories={categories}/>
+        <GroceryTable
+          groceries={groceries}
+          categories={categories}
+          selectedItems={selectedItems}
+          setSelectedItems={setSelectedItems}
+          onCheckboxChange={onCheckboxChange}
+        />
       </TabPanel>
       <TabPanel value={value} index={1}>
         <AddNewItems

@@ -17,7 +17,10 @@ export default function GroceryListMaker({
     setAisles,
     onAisleSubmit,
     groceryList,
-    setGroceryList
+    setGroceryList,
+    selectedItems,
+    setSelectedItems,
+    onCheckboxChange
     }) {
 
     return (
@@ -37,6 +40,9 @@ export default function GroceryListMaker({
                     aisles={aisles}
                     setAisles={setAisles}
                     onAisleSubmit={onAisleSubmit}
+                    selectedItems={selectedItems}
+                    setSelectedItems={setSelectedItems}
+                    onCheckboxChange={onCheckboxChange}
                 />
             </Grid>
         </Panel>
