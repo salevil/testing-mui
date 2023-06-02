@@ -50,7 +50,7 @@ export default function GroceryTable({ categories, groceries, onAddItems }) {
                 <TableCell key={category.name} align="center">
                   {category.name === item.category && (
                     <div>
-                      <Typography>{item.name}</Typography>
+                      {item.name}
                       <Checkbox
                         checked={selectedItems.some((selectedItem) =>
                         selectedItem.id === item.id)}
