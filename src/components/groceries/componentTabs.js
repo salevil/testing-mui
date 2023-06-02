@@ -1,5 +1,5 @@
 import * as React from 'react';
-import GroceriesPanel from "./groceriesPanel";
+import GroceryTable from "./groceryTable";
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -74,7 +74,7 @@ export default function BasicTabs({
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        <GroceriesPanel groceries={groceries} />
+        <GroceryTable groceries={groceries} categories={categories}/>
       </TabPanel>
       <TabPanel value={value} index={1}>
         <AddNewItems

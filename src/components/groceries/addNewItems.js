@@ -56,7 +56,7 @@ export default function AddNewItems({
             onChange={(event) => setCategory(event.target.value)}
           >
             <option value=''>Choose a category</option>
-          {categories.map((category) => (
+            {categories.map((category) => (
             <option key={category.key} value={category.name}>{category.name}</option>
           ))}
           </NativeSelect>
